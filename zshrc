@@ -1,0 +1,1 @@
+/Users/tor_skaar/.zshrc
