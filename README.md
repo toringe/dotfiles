@@ -1,5 +1,5 @@
 # dotfiles
-My customized dot files
+My customized dot files.
 
 ## Prerequisites (OSX)
 
