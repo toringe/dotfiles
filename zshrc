@@ -26,16 +26,36 @@ else
   LSCOLORS=…
 fi
 
+alias cat='ccat'
+alias ll='k'
+alias openssl='/usr/local/opt/openssl/bin/openssl'
+
 # Golang environment
 export GOPATH=$HOME/gocode
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+# My local bin folder
+export PATH=$PATH:$HOME/bin
+
+# Sbin
+export PATH="/usr/local/sbin:$PATH"
+
 # Virtual environments
-VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Autoenv
 source /usr/local/bin/activate.sh
+
+# Use k (https://github.com/supercrabtree/k)
+source $HOME/.k/k.sh
+
+# Pyenv
+export PYENV_ROOT=/usr/local/var/pyenv
+eval "$(pyenv init -)"
+
+# Pipenv
+export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
