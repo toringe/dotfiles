@@ -1,5 +1,7 @@
+# Colorful terminal
 TERM="xterm-256color"
 
+# Powerlevel9k Theme
 POWERLEVEL9K_MODE='awesome-patched'
 source  ~/powerlevel9k/powerlevel9k.zsh-theme
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
@@ -26,9 +28,16 @@ else
   LSCOLORS=…
 fi
 
+# Custom aliases
 alias cat='ccat'
 alias ll='k'
 alias openssl='/usr/local/opt/openssl/bin/openssl'
+
+# Use k (https://github.com/supercrabtree/k)
+source $HOME/.k/k.sh
+
+# My local bin folder
+export PATH=$PATH:$HOME/bin
 
 # Golang environment
 export GOPATH=$HOME/gocode
@@ -36,26 +45,12 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-# My local bin folder
-export PATH=$PATH:$HOME/bin
+# Pyenv: set path
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
-# Sbin
-export PATH="/usr/local/sbin:$PATH"
-
-# Virtual environments
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
-# Autoenv
-source /usr/local/bin/activate.sh
-
-# Use k (https://github.com/supercrabtree/k)
-source $HOME/.k/k.sh
-
-# Pyenv
-export PYENV_ROOT=/usr/local/var/pyenv
-eval "$(pyenv init -)"
-
-# Pipenv
-export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
+# Pyenv: enable shims and autocompletion
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
