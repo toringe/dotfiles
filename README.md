@@ -10,7 +10,7 @@ Download and install:
 
 Run:
 ```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew tap caskroom/fonts
 brew cask install font-awesome-terminal-fonts
 git clone https://github.com/bhilburn/powerlevel9k.git ~/powerlevel9k
