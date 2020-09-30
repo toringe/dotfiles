@@ -17,6 +17,13 @@ POWERLEVEL9K_OS_ICON_FOREGROUND='183'
 POWERLEVEL9K_PYTHON_ICON='\U1F40D'
 POWERLEVEL9K_VIRTUALENV_BACKGROUND='212'
 
+# Zsh completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit
+fi
+
 # Directory colors
 LS_COLORS=…
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
