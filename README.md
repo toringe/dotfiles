@@ -11,6 +11,7 @@ Download and install:
 Run:
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew cask install iterm2
 brew tap caskroom/fonts
 brew cask install font-awesome-terminal-fonts
 git clone https://github.com/bhilburn/powerlevel9k.git ~/powerlevel9k
