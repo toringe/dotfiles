@@ -4,17 +4,27 @@ My customized dot files.
 ## Prerequisites (OSX)
 
 Download and install: 
-* https://www.iterm2.com/downloads.html
-* https://files.ax86.net/terminus-ttf/files/latest.zip
-* https://draculatheme.com/iterm/
+* https://files.ax86.net/terminus-ttf/files/latest.zip <-- Unzip and open in Finder
+* https://draculatheme.com/iterm/ <-- Download and import in Iterm2
 
 Run:
 ```
+# Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# Iterm2
 brew cask install iterm2
-brew install zsh zsh-completions
+
+# Zsh and git
+brew install zsh zsh-completions git gh
+
+# Oh-my-zsh framework
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Fonts
 brew tap homebrew/cask-fonts
 brew cask install font-awesome-terminal-fonts
+
 git clone https://github.com/bhilburn/powerlevel9k.git ~/powerlevel9k
 git clone https://github.com/dracula/iterm.git
 ```
